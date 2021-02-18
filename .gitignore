@@ -1,0 +1,15 @@
+/.metadata/
+.settings/
+bin/
+
+*.class
+*.jar
+*.war
+*.ear
+
+*.tmp
+*.bak
+*.swp
+
+hs_err_pid*
+*.launch
