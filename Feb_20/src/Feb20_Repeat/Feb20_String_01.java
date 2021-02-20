@@ -10,9 +10,11 @@ public class Feb20_String_01 {
 		strNum[1] = 55;
 		strNum[2] = 44;
 		
+		int intNum = 0;
 		for(int i = 0 ; i < strNum.length ; i++) {
 			
-			System.out.println(strNum[i]);
+			intNum = strNum[i];
+			System.out.println(intNum);
 		}
 		
 	}
