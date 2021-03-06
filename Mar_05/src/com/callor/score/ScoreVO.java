@@ -11,6 +11,21 @@ public class ScoreVO {
 	private int total;
 	private float avg;
 	
+	
+	
+	public ScoreVO() {
+	}
+	public ScoreVO(String num, int kor, int eng, int math, int music, int history, int total, float avg) {
+		super();
+		this.num = num;
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+		this.music = music;
+		this.history = history;
+		this.total = total;
+		this.avg = avg;
+	}
 	public String getNum() {
 		return num;
 	}
