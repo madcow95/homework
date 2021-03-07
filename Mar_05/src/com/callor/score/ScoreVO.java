@@ -11,8 +11,6 @@ public class ScoreVO {
 	private int total;
 	private float avg;
 	
-	
-	
 	public ScoreVO() {
 	}
 	public ScoreVO(String num, int kor, int eng, int math, int music, int history, int total, float avg) {

@@ -2,14 +2,13 @@ package com.callor.score;
 
 import java.util.Scanner;
 
-public class ScoreMenu implements MenuService{
-	
+public class ScoreMenu implements MenuService {
+
 	private Scanner scan;
-	
+
 	public ScoreMenu() {
 		scan = new Scanner(System.in);
 	}
-
 
 	@Override
 	public Integer selectMenu() {
@@ -27,20 +26,29 @@ public class ScoreMenu implements MenuService{
 			String select = scan.nextLine();
 
 			if (select.equalsIgnoreCase("q")) {
-				break;
+				return null;
 			}
-			
-			int intSelect = Integer.valueOf(select);
-			
-			if (intSelect == 1) {
-				return intSelect;
-			} else if (intSelect == 2) {
-				return intSelect;
-			} else if (intSelect == 3) {
-				return intSelect;
+			try {
+				int intSelect = Integer.valueOf(select);
+				if (intSelect == Values.MAKE_SCORE) {
+					return intSelect;
+				} else if (intSelect == Values.SAVE_SCORE) {
+					return intSelect;
+				} else if (intSelect == Values.LOAD_SCORE) {
+					return intSelect;
+				} else {
+					System.out.printf("%d ~ %d의 수만 입력하세요\n",
+							Values.START_MENU,
+							Values.LAST_MENU);
+				}
+
+			} catch (Exception e) {
+				System.out.printf("Q / %d ~ %d의 정수만 입력하세요\n",
+						Values.START_MENU,
+						Values.LAST_MENU);
 			}
+
 		}
-		return null;
 	}
 
 }

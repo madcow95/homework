@@ -117,10 +117,13 @@ public class ScoreService implements CartService {
 			vo.setAvg(avg);
 		}
 		System.out.println(Values.dLine);
-		System.out.println("국어\t영어\t수학\t음악\t국사\t총점\t평균");
+		System.out.println("순번\t\t국어\t영어\t수학\t음악\t국사\t총점\t평균");
 		System.out.println(Values.sLine);
+		int count = 0;
 		for (ScoreVO vo : scoreList) {
-			System.out.printf("%d\t%d\t%d\t%d\t%d\t%d\t%3.1f\n",
+			++count;
+			System.out.printf("%d\t\t%d\t%d\t%d\t%d\t%d\t%d\t%3.1f\n",
+					count,
 					vo.getKor(),
 					vo.getEng(),
 					vo.getMath(),

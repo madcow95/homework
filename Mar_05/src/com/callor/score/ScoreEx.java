@@ -1,24 +1,31 @@
 package com.callor.score;
 
+import java.util.Scanner;
+
 public class ScoreEx {
 
 	public static void main(String[] args) {
-
+		
+		Scanner scan = new Scanner(System.in);
 		ScoreMenu sMenu = new ScoreMenu();
 		ScoreService sService = new ScoreService();
 
 		while (true) {
-			int select = sMenu.selectMenu();
-			if (select == 1) {
+			Integer select = sMenu.selectMenu();
+			if (select == null) {
+				break;
+			}
+			if (select == Values.MAKE_SCORE) {
 				sService.makeScore();
 			}
-			if (select == 2) {
+			else if (select == Values.SAVE_SCORE) {
 				sService.saveScoreToFile();
 			} 
-			if (select == 3) {
+			else if (select == Values.LOAD_SCORE) {
 				sService.loadScoreFromFile();
 			}
 		}
+		System.out.println("프로그램 종료!");
 	}
 
 }
