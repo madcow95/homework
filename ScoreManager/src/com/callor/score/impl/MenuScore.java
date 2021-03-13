@@ -34,11 +34,11 @@ public class MenuScore implements ScoreMenu {
 			}
 			int select = Integer.valueOf(strSelect);
 			if(select == Values.MAKE_SCORE) {
-				return select;
+				return Values.MAKE_SCORE;
 			} else if(select == Values.SAVE_SCORE) {
-				return select;
+				return Values.SAVE_SCORE;
 			} else if(select == Values.LOAD_SCORE) {
-				return select;
+				return Values.LOAD_SCORE;
 			}
 
 		}

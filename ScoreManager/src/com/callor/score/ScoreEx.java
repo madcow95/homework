@@ -11,16 +11,31 @@ public class ScoreEx {
 		ScoreServiceImplV1 ssV1 = new ScoreServiceImplV1();
 
 		while (true) {
-			Integer select = ms.selectMenu();
-			if (select == null) {
-				break;
-			} else if(select == Values.MAKE_SCORE) {
-				ssV1.makeScore();
-			} else if(select == Values.SAVE_SCORE) {
-				ssV1.saveScoreToFile();
-			} else if(select == Values.LOAD_SCORE) {
-				ssV1.loadScoreFromFile();
+			try {
+				Integer select = ms.selectMenu();
+				if (select == null) {
+					break;
+				}
+				
+				if (select >= Values.START_MENU && select <= Values.QUIT_MENU) {
+					if (select == Values.MAKE_SCORE) {
+						ssV1.makeScore();
+					} else if (select == Values.SAVE_SCORE) {
+						ssV1.saveScoreToFile();
+					} else if (select == Values.LOAD_SCORE) {
+						ssV1.loadScoreFromFile();
+					}
+				} else {
+					System.out.printf("%d ~ %d만 입력하세요\n",
+							Values.START_MENU,
+							Values.QUIT_MENU);
+				}
+			} catch (Exception e) {
+				System.out.printf("q / %d ~ %d만 입력하세요\n",
+						Values.START_MENU,
+						Values.QUIT_MENU);
 			}
+
 		}
 		System.out.println("프로그램 종료!!");
 	}
