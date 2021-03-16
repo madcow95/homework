@@ -25,10 +25,6 @@ public class ScoreEx {
 					} else if (select == Values.LOAD_SCORE) {
 						ssV1.loadScoreFromFile();
 					}
-				} else {
-					System.out.printf("%d ~ %d만 입력하세요\n",
-							Values.START_MENU,
-							Values.QUIT_MENU);
 				}
 			} catch (Exception e) {
 				System.out.printf("q / %d ~ %d만 입력하세요\n",

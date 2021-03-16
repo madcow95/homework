@@ -33,14 +33,19 @@ public class MenuScore implements ScoreMenu {
 				}
 			}
 			int select = Integer.valueOf(strSelect);
-			if(select == Values.MAKE_SCORE) {
-				return Values.MAKE_SCORE;
-			} else if(select == Values.SAVE_SCORE) {
-				return Values.SAVE_SCORE;
-			} else if(select == Values.LOAD_SCORE) {
-				return Values.LOAD_SCORE;
+			if (select >= Values.START_MENU && select <= Values.QUIT_MENU) {
+				if (select == Values.MAKE_SCORE) {
+					return Values.MAKE_SCORE;
+				} else if (select == Values.SAVE_SCORE) {
+					return Values.SAVE_SCORE;
+				} else if (select == Values.LOAD_SCORE) {
+					return Values.LOAD_SCORE;
+				}
+			} else {
+				System.out.printf("%d ~ %d의 수만 입력하세요\n",
+						Values.START_MENU,
+						Values.QUIT_MENU);
 			}
-
 		}
 
 	}
